@@ -1,7 +1,8 @@
-package com.sunasterisk.englishflashcard
+package com.sunasterisk.englishflashcard.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sunasterisk.englishflashcard.R
 
 class MainActivity : AppCompatActivity() {
 
