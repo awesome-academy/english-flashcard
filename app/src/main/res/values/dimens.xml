@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sp_55">55sp</dimen>
+    <dimen name="dp_110">110dp</dimen>
+    <dimen name="dp_350">350dp</dimen>
+    <dimen name="dp_400">400dp</dimen>
+    <dimen name="dp_0">0dp</dimen>
+</resources>

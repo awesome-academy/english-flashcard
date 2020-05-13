@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EnglishFlashcard</string>
+    <string name="text_flashcard_english">Flashcard English</string>
+    <string name="image_plash_screen">image splash screen</string>
 </resources>
