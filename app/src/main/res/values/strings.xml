@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">EnglishFlashcard</string>
-    <string name="text_flashcard_english">Flashcard English</string>
-    <string name="image_plash_screen">image splash screen</string>
+
+    <string name="title_flashcard_english">Flashcard English</string>
+    <string name="title_learn_appbar">Learn</string>
+    <string name="title_exam_appbar">Exam</string>
+    <string name="title_list_topics">List Topics</string>
+    <string name="title_school">School</string>
+
+    <string name="content_image_plash_screen">image splash screen</string>
+    <string name="content_image_topic_item">image topic item</string>
+    <string name="content_image_learn_appbar">image learn appbar</string>
+    <string name="content_image_search_appbar">image search appbar</string>
 </resources>

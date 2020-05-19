@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10"
+    android:orientation="vertical"
+    tools:ignore="UseCompoundDrawables">
+
+    <ImageView
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:contentDescription="@string/content_image_topic_item"
+        android:src="@drawable/school" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:text="@string/title_school"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold" />
+</LinearLayout>
