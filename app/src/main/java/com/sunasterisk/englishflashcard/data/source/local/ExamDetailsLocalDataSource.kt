@@ -1,6 +1,6 @@
 package com.sunasterisk.englishflashcard.data.source.local
 
-import com.sunasterisk.englishflashcard.data.model.ExamDetails
+import com.sunasterisk.englishflashcard.data.model.ExamDetail
 import com.sunasterisk.englishflashcard.data.source.ExamDetailsDataSource
 import com.sunasterisk.englishflashcard.data.source.OnDataLoadedCallback
 import com.sunasterisk.englishflashcard.data.source.local.base.EmptyInput
@@ -12,15 +12,15 @@ class ExamDetailsLocalDataSource private constructor(private val examDetailsDao:
 
     override fun getAllExamDetails(
         examId: String,
-        callback: OnDataLoadedCallback<List<ExamDetails>>
+        callback: OnDataLoadedCallback<List<ExamDetail>>
     ) {
-        LocalAsyncTask<EmptyInput, List<ExamDetails>>(callback) {
+        LocalAsyncTask<EmptyInput, List<ExamDetail>>(callback) {
             examDetailsDao.getAllExamDetails(examId)
         }.execute(EmptyInput)
     }
 
-    override fun addExamDetail(examDetail: ExamDetails, callback: OnDataLoadedCallback<Boolean>) {
-        LocalAsyncTask<ExamDetails, Boolean>(callback) {
+    override fun addExamDetail(examDetail: ExamDetail, callback: OnDataLoadedCallback<Boolean>) {
+        LocalAsyncTask<ExamDetail, Boolean>(callback) {
             examDetailsDao.addExamDetail(examDetail)
         }.execute(examDetail)
     }

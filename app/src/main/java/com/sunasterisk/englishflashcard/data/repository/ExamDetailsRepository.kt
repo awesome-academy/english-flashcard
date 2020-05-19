@@ -1,6 +1,6 @@
 package com.sunasterisk.englishflashcard.data.repository
 
-import com.sunasterisk.englishflashcard.data.model.ExamDetails
+import com.sunasterisk.englishflashcard.data.model.ExamDetail
 import com.sunasterisk.englishflashcard.data.source.ExamDetailsDataSource
 import com.sunasterisk.englishflashcard.data.source.OnDataLoadedCallback
 
@@ -9,12 +9,12 @@ class ExamDetailsRepository(private val localDataSource: ExamDetailsDataSource.L
 
     override fun getAllExamDetails(
         examId: String,
-        callback: OnDataLoadedCallback<List<ExamDetails>>
+        callback: OnDataLoadedCallback<List<ExamDetail>>
     ) {
         localDataSource.getAllExamDetails(examId, callback)
     }
 
-    override fun addExamDetail(examDetail: ExamDetails, callback: OnDataLoadedCallback<Boolean>) {
+    override fun addExamDetail(examDetail: ExamDetail, callback: OnDataLoadedCallback<Boolean>) {
         localDataSource.addExamDetail(examDetail, callback)
     }
 

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dp_10"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_160"
+    android:layout_margin="@dimen/dp_5"
+    android:gravity="center"
     android:orientation="vertical"
+    app:cardCornerRadius="@dimen/dp_20"
+    app:cardElevation="@dimen/dp_10"
     tools:ignore="UseCompoundDrawables">
 
     <ImageView
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_100"
-        android:contentDescription="@string/content_image_topic_item"
-        android:src="@drawable/school" />
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/ic_nature" />
 
     <TextView
+        android:id="@+id/textViewNameTopic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_120"
         android:gravity="center"
         android:text="@string/title_school"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/sp_18"
+        android:textColor="@color/colorBlack1"
+        android:textSize="@dimen/sp_21"
         android:textStyle="bold" />
-</LinearLayout>
+</androidx.cardview.widget.CardView>

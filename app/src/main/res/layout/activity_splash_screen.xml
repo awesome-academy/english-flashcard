@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_turquoise"
+    android:background="@color/colorTurquoise"
     tools:context="com.sunasterisk.englishflashcard.ui.splashscreen.SplashScreen">
 
     <TextView
         android:id="@+id/textViewSplashScreen"
-        android:layout_width="@dimen/dp_0"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_110"
         android:fontFamily="@font/edwardian"

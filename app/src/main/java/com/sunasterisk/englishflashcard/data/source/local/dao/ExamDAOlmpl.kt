@@ -1,7 +1,6 @@
 package com.sunasterisk.englishflashcard.data.source.local.dao
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -19,7 +18,6 @@ class ExamDAOlmpl private constructor(context: Context) : ExamDAO {
     @SuppressLint("Recycle")
     override fun getAllExames(): List<Exam> {
         val listExam = mutableListOf<Exam>()
-        val query = "SELECT * FROM " + SQLiteTable.TABLE_EXAM
         val cursor: Cursor =
             readableDatabase.query(SQLiteTable.TABLE_EXAM, null, null, null, null, null, null)
                 .apply {
