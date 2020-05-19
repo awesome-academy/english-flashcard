@@ -8,8 +8,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.sunasterisk.englishflashcard.R
 import com.sunasterisk.englishflashcard.ui.exam.ExamFragment
-import com.sunasterisk.englishflashcard.ui.learn.AddEnglishFragment
-import com.sunasterisk.englishflashcard.ui.search.LearnFragment
+import com.sunasterisk.englishflashcard.ui.addenglish.AddEnglishFragment
+import com.sunasterisk.englishflashcard.ui.learn.LearnFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         imageLearn.setOnClickListener(this)
         imageExam.setOnClickListener(this)
         floatButtonAdd.setOnClickListener(this)
+        replaceFragment(LearnFragment())
     }
 
     override fun onClick(v: View?) {
@@ -34,8 +35,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment)
-            .addToBackStack(null).commit()
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, fragment)
+            .commit()
     }
 }

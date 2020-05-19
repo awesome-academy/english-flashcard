@@ -1,6 +1,6 @@
 package com.sunasterisk.englishflashcard.data.source.local
 
-import com.sunasterisk.englishflashcard.data.model.Topics
+import com.sunasterisk.englishflashcard.data.model.Topic
 import com.sunasterisk.englishflashcard.data.source.OnDataLoadedCallback
 import com.sunasterisk.englishflashcard.data.source.TopicsDataSource
 import com.sunasterisk.englishflashcard.data.source.local.base.EmptyInput
@@ -10,14 +10,14 @@ import com.sunasterisk.englishflashcard.data.source.local.dao.TopicsDAO
 class TopicsLocalDataSource private constructor(private val topicsDao: TopicsDAO) :
     TopicsDataSource.Local {
 
-    override fun getAllTopics(callback: OnDataLoadedCallback<List<Topics>>) {
-        LocalAsyncTask<EmptyInput, List<Topics>>(callback) {
+    override fun getAllTopics(callback: OnDataLoadedCallback<List<Topic>>) {
+        LocalAsyncTask<EmptyInput, List<Topic>>(callback) {
             topicsDao.getAllTopics()
         }.execute(EmptyInput)
     }
 
-    override fun addTopic(topic: Topics, callback: OnDataLoadedCallback<Boolean>) {
-        LocalAsyncTask<Topics, Boolean>(callback) {
+    override fun addTopic(topic: Topic, callback: OnDataLoadedCallback<Boolean>) {
+        LocalAsyncTask<Topic, Boolean>(callback) {
             topicsDao.addTopic(topic)
         }.execute(topic)
     }

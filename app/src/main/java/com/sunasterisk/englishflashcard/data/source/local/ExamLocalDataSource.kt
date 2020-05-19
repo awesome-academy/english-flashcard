@@ -7,7 +7,6 @@ import com.sunasterisk.englishflashcard.data.source.local.base.EmptyInput
 import com.sunasterisk.englishflashcard.data.source.local.base.LocalAsyncTask
 import com.sunasterisk.englishflashcard.data.source.local.dao.ExamDAO
 
-
 class ExamLocalDataSource private constructor(private val examDao: ExamDAO) : ExamDataSource.Local {
 
     override fun getAllExames(callback: OnDataLoadedCallback<List<Exam>>) {

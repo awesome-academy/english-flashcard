@@ -1,17 +1,14 @@
 package com.sunasterisk.englishflashcard.ui.splashscreen
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.sunasterisk.englishflashcard.R
 import com.sunasterisk.englishflashcard.ui.main.MainActivity
 
-
 class SplashScreen : AppCompatActivity() {
 
     companion object {
-        val TIME_LOAD = 3000
+        const val TIME_LOAD = 3000
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,11 +1,10 @@
 package com.sunasterisk.englishflashcard.data.source.local.dao
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.sunasterisk.englishflashcard.data.model.ExamDetails
+import com.sunasterisk.englishflashcard.data.model.ExamDetail
 import com.sunasterisk.englishflashcard.database.SQLiteHelper
 import com.sunasterisk.englishflashcard.database.SQLiteTable
 
@@ -17,9 +16,8 @@ class ExamDetailsDAOlmpl private constructor(context: Context) : ExamDetailsDAO 
         SQLiteHelper.getInstance(context).readableDatabase
 
     @SuppressLint("Recycle")
-    override fun getAllExamDetails(examId: String): List<ExamDetails> {
-        val listExamDetails = mutableListOf<ExamDetails>()
-        val query = "SELECT * FROM " + SQLiteTable.TABLE_EXAMDETAILS
+    override fun getAllExamDetails(examId: String): List<ExamDetail> {
+        val listExamDetails = mutableListOf<ExamDetail>()
         val cursor: Cursor = readableDatabase.query(
             SQLiteTable.TABLE_EXAMDETAILS,
             null,
@@ -32,13 +30,13 @@ class ExamDetailsDAOlmpl private constructor(context: Context) : ExamDetailsDAO 
             moveToFirst()
         }
         while (!cursor.isAfterLast) {
-            listExamDetails.add(ExamDetails(cursor))
+            listExamDetails.add(ExamDetail(cursor))
             cursor.moveToNext()
         }
         return listExamDetails
     }
 
-    override fun addExamDetail(examDetail: ExamDetails): Boolean {
+    override fun addExamDetail(examDetail: ExamDetail): Boolean {
         return writableDatabase.insert(
             SQLiteTable.TABLE_EXAMDETAILS,
             null,

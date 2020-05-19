@@ -2,71 +2,77 @@ package com.sunasterisk.englishflashcard.database
 
 object SQLiteTable {
 
-    var TABLE_TOPICS = "Topic"
-    var COL_ID_TOPICS = "topicId"
-    var COL_NAME_TOPICS = "nameTopic"
-    var COL_IMG_TOPICS = "imgTopic"
+    const val TABLE_TOPICS = "Topic"
+    const val COL_ID_TOPICS = "topicId"
+    const val COL_NAME_TOPICS = "nameTopic"
+    const val COL_IMG_TOPICS = "imgTopic"
 
-    var CREATE_TABLE_TOPICS = String.format(
-        "CREATE TABLE %s (%s IDENTITY(1,1) PRIMARY KEY, %s TEXT, %s TEXT)",
-        TABLE_TOPICS, COL_ID_TOPICS, COL_NAME_TOPICS, COL_IMG_TOPICS
-    )
+    const val CREATE_TABLE_TOPICS = "CREATE TABLE $TABLE_TOPICS (" +
+            "$COL_ID_TOPICS IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_NAME_TOPICS TEXT, " +
+            "$COL_IMG_TOPICS TEXT)"
 
-    var TABLE_DICTIONARY = "Dictionary"
-    var COL_ID_DICTIONARY = "dictionaryId"
-    var COL_TRANSLATE = "translate"
-    var COL_WORD = "word"
-    var COL_WORD_TYPE = "wordType"
-    var COL_SPELLING = "spelling"
+    const val TABLE_DICTIONARY = "Dictionary"
+    const val COL_ID_DICTIONARY = "dictionaryId"
+    const val COL_TRANSLATE = "translate"
+    const val COL_WORD = "word"
+    const val COL_WORD_TYPE = "wordType"
+    const val COL_SPELLING = "spelling"
 
-    var CREATE_TABLE_DICTIONARY = String.format(
-        "CREATE TABLE %s (%s IDENTITY(1,1) PRIMARY KEY, %s TEXT, %s TEXT, %s TEXT, %s TEXT ,%s INTEGER)",
-        TABLE_DICTIONARY, COL_ID_DICTIONARY, COL_WORD, COL_WORD_TYPE, COL_SPELLING,
-        COL_TRANSLATE, COL_ID_TOPICS
-    )
+    const val CREATE_TABLE_DICTIONARY = "CREATE TABLE $TABLE_DICTIONARY (" +
+            "$COL_ID_DICTIONARY IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_WORD TEXT, " +
+            "$COL_WORD_TYPE TEXT, " +
+            "$COL_SPELLING TEXT, " +
+            "$COL_TRANSLATE TEXT, " +
+            "$COL_ID_TOPICS INTEGER)"
 
-    private var TABLE_WORDENGLISH = "WordEnglish"
-    private var COL_ID_WORD = "wordId"
 
-    var CREATE_TABLE_WORDENGLISH = String.format(
-        "CREATE TABLE %s (%s IDENTITY(1,1) PRIMARY KEY, %s TEXT)",
-        TABLE_WORDENGLISH, COL_ID_WORD, COL_WORD
-    )
+    const val TABLE_WORDENGLISH = "WordEnglish"
+    const val COL_ID_WORD = "wordId"
 
-    private var TABLE_WORDVIETNAMESE = "WordVietnamese"
-    private var COL_ID_WORDVIETNAMESE = "wordvietnameseId"
-    private var COL_WORD_VIETNAMESE = "wordVietnamese"
+    const val CREATE_TABLE_WORDENGLISH = "CREATE TABLE $TABLE_WORDENGLISH (" +
+            "$COL_ID_WORD IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_WORD TEXT)"
 
-    var CREATE_TABLE_WORDVIETNAMESE = String.format(
-        "CREATE TABLE %s (%s IDENTITY(1,1) PRIMARY KEY, %s TEXT)",
-        TABLE_WORDVIETNAMESE, COL_ID_WORDVIETNAMESE, COL_WORD_VIETNAMESE
-    )
+    const val TABLE_WORDVIETNAMESE = "WordVietnamese"
+    const val COL_ID_WORDVIETNAMESE = "wordvietnameseId"
+    const val COL_WORD_VIETNAMESE = "wordVietnamese"
 
-    var TABLE_EXAM = "Exam"
-    var COL_ID_EXAM = "examId"
-    var COL_DATE_EXAM = "dateExam"
-    var COL_CORRECT_SENTENCES = "correctSentences"
-    var COL_WRONG_SENTENCES = "wrongSentences"
-    var COL_TOTAL_SCORE = "totalScore"
+    const val CREATE_TABLE_WORDVIETNAMESE = "CREATE TABLE $TABLE_WORDVIETNAMESE (" +
+            "$COL_ID_WORDVIETNAMESE IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_WORD_VIETNAMESE TEXT)"
 
-    var CREATE_TABLE_EXAM = String.format(
-        "CREATE TABLE %s (%s IDENTITY(1,1) PRIMARY KEY, %s TEXT, %s INTEGER, %s INTEGER, %s INTEGER)",
-        TABLE_EXAM, COL_ID_EXAM, COL_DATE_EXAM, COL_CORRECT_SENTENCES, COL_WRONG_SENTENCES,
-        COL_TOTAL_SCORE
-    )
+    const val TABLE_EXAM = "Exam"
+    const val COL_ID_EXAM = "examId"
+    const val COL_DATE_EXAM = "dateExam"
+    const val COL_CORRECT_SENTENCES = "correctSentences"
+    const val COL_WRONG_SENTENCES = "wrongSentences"
+    const val COL_TOTAL_SCORE = "totalScore"
 
-    var TABLE_EXAMDETAILS = "ExamDetails"
-    var COL_ID_EXAMDETAILS = "examdetailsId"
-    var COL_QUESTION = "question"
-    var COL_ANSWER_A = "answerA"
-    var COL_ANSWER_B = "answerB"
-    var COL_ANSWER_C = "answerC"
-    var COL_ANSWER_D = "answerD"
-    var COL_CHECK = "check"
+    const val CREATE_TABLE_EXAM = "CREATE TABLE $TABLE_EXAM (" +
+            "$COL_ID_EXAM IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_DATE_EXAM TEXT, " +
+            "$COL_CORRECT_SENTENCES INTEGER, " +
+            "$COL_WRONG_SENTENCES INTEGER, " +
+            "$COL_TOTAL_SCORE INTEGER)"
 
-    var CREATE_TABLE_EXAMDETAILS = String.format(
-        "CREATE TABLE %s (%s IDENTITY(1,1) PRIMARY KEY, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s INTEGER, %s INTEGER)",
-        TABLE_EXAMDETAILS, COL_ID_EXAMDETAILS, COL_QUESTION, COL_ANSWER_A, COL_ANSWER_B,
-        COL_ANSWER_C, COL_ANSWER_D, COL_CHECK, COL_ID_EXAM
-    )
+    const val TABLE_EXAMDETAILS = "ExamDetails"
+    const val COL_ID_EXAMDETAILS = "examdetailsId"
+    const val COL_QUESTION = "question"
+    const val COL_ANSWER_A = "answerA"
+    const val COL_ANSWER_B = "answerB"
+    const val COL_ANSWER_C = "answerC"
+    const val COL_ANSWER_D = "answerD"
+    const val COL_CHECK = "rightWrong"
+
+    const val CREATE_TABLE_EXAMDETAILS = "CREATE TABLE $TABLE_EXAMDETAILS (" +
+            "$COL_ID_EXAMDETAILS IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_QUESTION TEXT, " +
+            "$COL_ANSWER_A TEXT, " +
+            "$COL_ANSWER_B TEXT, " +
+            "$COL_ANSWER_C TEXT, " +
+            "$COL_ANSWER_D TEXT, " +
+            "$COL_CHECK TEXT, " +
+            "$COL_ID_EXAM INTEGER)"
 }

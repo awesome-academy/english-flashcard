@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.sunasterisk.englishflashcard.data.model.Topics
+import com.sunasterisk.englishflashcard.data.model.Topic
 import com.sunasterisk.englishflashcard.database.SQLiteHelper
 import com.sunasterisk.englishflashcard.database.SQLiteTable
 
@@ -16,21 +16,21 @@ class TopicsDAOlmpl private constructor(context: Context) : TopicsDAO {
         SQLiteHelper.getInstance(context).readableDatabase
 
     @SuppressLint("Recycle")
-    override fun getAllTopics(): List<Topics> {
-        val listTopics = mutableListOf<Topics>()
+    override fun getAllTopics(): List<Topic> {
+        val listTopics = mutableListOf<Topic>()
         val cursor: Cursor =
             readableDatabase.query(SQLiteTable.TABLE_TOPICS, null, null, null, null, null, null)
                 .apply {
                     moveToFirst()
                 }
         while (!cursor.isAfterLast) {
-            listTopics.add(Topics(cursor))
+            listTopics.add(Topic(cursor))
             cursor.moveToNext()
         }
         return listTopics
     }
 
-    override fun addTopic(topic: Topics): Boolean {
+    override fun addTopic(topic: Topic): Boolean {
         return writableDatabase.insert(SQLiteTable.TABLE_TOPICS, null, topic.getContentValues()) > 0
     }
 

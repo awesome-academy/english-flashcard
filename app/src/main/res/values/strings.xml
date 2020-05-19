@@ -1,14 +1,25 @@
 <resources>
     <string name="app_name">EnglishFlashcard</string>
 
+    <string name="content_image_plash_screen">image splash screen</string>
+    <string name="content_image_topic_item">image topic item</string>
+    <string name="content_image_learn_appbar">image learn appbar</string>
+    <string name="content_image_search_appbar">image search appbar</string>
+
+    <string name="title_xin_chao">Xin Chào</string>
+    <string name="title_toolbar_learn">Learn</string>
+    <string name="title_toolbar_exam">Exam</string>
+    <string name="title_toolbar_add">Add Dictionary</string>
+    <string name="title_topics">Topics</string>
     <string name="title_flashcard_english">Flashcard English</string>
     <string name="title_learn_appbar">Learn</string>
     <string name="title_exam_appbar">Exam</string>
     <string name="title_list_topics">List Topics</string>
     <string name="title_school">School</string>
+    <string name="title_toolbar">Flashcard English</string>
+    <string name="title_word">Hello</string>
+    <string name="title_spelling">/asda/</string>
+    <string name="title_translate">Xin Chào</string>
 
-    <string name="content_image_plash_screen">image splash screen</string>
-    <string name="content_image_topic_item">image topic item</string>
-    <string name="content_image_learn_appbar">image learn appbar</string>
-    <string name="content_image_search_appbar">image search appbar</string>
+    <string name="hint_search">Search</string>
 </resources>
