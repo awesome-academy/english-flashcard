@@ -5,6 +5,7 @@
     <string name="content_image_topic_item">image topic item</string>
     <string name="content_image_learn_appbar">image learn appbar</string>
     <string name="content_image_search_appbar">image search appbar</string>
+    <string name="content_image_nodata">image no data</string>
 
     <string name="title_xin_chao">Xin Chào</string>
     <string name="title_toolbar_learn">Learn</string>
@@ -20,6 +21,7 @@
     <string name="title_word">Hello</string>
     <string name="title_spelling">/asda/</string>
     <string name="title_translate">Xin Chào</string>
+    <string name="title_nodata">Không có dữ liệu</string>
 
     <string name="hint_search">Search</string>
 </resources>

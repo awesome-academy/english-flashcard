@@ -22,6 +22,13 @@ class DictionaryRepository(private val localDataSource: DictionaryDataSource.Loc
         localDataSource.deleteDictionary(dictionaryId, callback)
     }
 
+    override fun searchDictionaies(
+        nameEnglish: String,
+        callback: OnDataLoadedCallback<List<Dictionary>>
+    ) {
+        localDataSource.searchDictionaies(nameEnglish, callback)
+    }
+
     companion object {
         private var instance: DictionaryRepository? = null
         fun getInstance(local: DictionaryDataSource.Local) =
