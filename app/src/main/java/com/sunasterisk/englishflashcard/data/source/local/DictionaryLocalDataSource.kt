@@ -31,6 +31,15 @@ class DictionaryLocalDataSource private constructor(private val dictionaryDAO: D
         }.execute(dictionaryId)
     }
 
+    override fun searchDictionaies(
+        nameEnglish: String,
+        callback: OnDataLoadedCallback<List<Dictionary>>
+    ) {
+        LocalAsyncTask<String, List<Dictionary>>(callback) {
+            dictionaryDAO.searchDictionaies(nameEnglish)
+        }.execute(nameEnglish)
+    }
+
     companion object {
         private var instance: DictionaryLocalDataSource? = null
         fun getInstance(dictionaryDao: DictionaryDAO): DictionaryLocalDataSource =

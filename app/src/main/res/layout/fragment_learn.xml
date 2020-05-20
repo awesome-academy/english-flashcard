@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.sunasterisk.englishflashcard.ui.learn.LearnFragment">
+    tools:context="com.sunasterisk.englishflashcard.ui.learnandsearch.LearnFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -36,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <EditText
+            android:id="@+id/editextSearch"
             android:layout_width="@dimen/dp_350"
             android:layout_height="@dimen/dp_55"
             android:background="@drawable/border_edittext"
@@ -44,7 +45,8 @@
             android:hint="@string/hint_search"
             android:inputType=""
             android:paddingStart="@dimen/dp_20"
-            android:paddingEnd="@dimen/dp_40" />
+            android:paddingEnd="@dimen/dp_40"
+            tools:ignore="Autofill" />
     </LinearLayout>
 
     <FrameLayout
@@ -56,6 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutTopics"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorTurquoise"
@@ -89,20 +92,56 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorTurquoise"
             android:visibility="invisible">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:itemCount="1"
-                tools:listitem="@layout/dictionary_item" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewDictionary"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/dictionary_item" />
+
+                <LinearLayout
+                    android:id="@+id/linerLayoutNodata"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_200"
+                        android:layout_height="@dimen/dp_200"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_100"
+                        android:contentDescription="@string/content_image_nodata"
+                        android:src="@drawable/pnodata" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:gravity="center"
+                        android:text="@string/title_nodata"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/sp_25"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

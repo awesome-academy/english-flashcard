@@ -52,6 +52,26 @@ class DictionaryDAOlmpl private constructor(context: Context) : DictionaryDAO {
         ) > 0
     }
 
+    override fun searchDictionaies(nameEnglish: String): List<Dictionary> {
+        val dictionaries = mutableListOf<Dictionary>()
+        val cursor: Cursor = readableDatabase.query(
+            SQLiteTable.TABLE_DICTIONARY,
+            null,
+            SQLiteTable.COL_WORD + " LIKE ?",
+            arrayOf(nameEnglish + "%"),
+            null,
+            null,
+            null
+        ).apply {
+            moveToFirst()
+        }
+        while (!cursor.isAfterLast) {
+            dictionaries.add(Dictionary(cursor))
+            cursor.moveToNext()
+        }
+        return dictionaries
+    }
+
     companion object {
         private var instance: DictionaryDAOlmpl? = null
         fun getInstance(context: Context) =

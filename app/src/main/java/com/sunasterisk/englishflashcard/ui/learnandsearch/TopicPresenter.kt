@@ -1,16 +1,18 @@
-package com.sunasterisk.englishflashcard.ui.learn
+package com.sunasterisk.englishflashcard.ui.learnandsearch
 
+import com.sunasterisk.englishflashcard.data.model.Dictionary
 import com.sunasterisk.englishflashcard.data.model.Topic
+import com.sunasterisk.englishflashcard.data.repository.DictionaryRepository
 import com.sunasterisk.englishflashcard.data.repository.TopicsRepository
 import com.sunasterisk.englishflashcard.data.source.OnDataLoadedCallback
 
 class TopicPresenter(
     private val view: TopicContract.View,
-    private val repository: TopicsRepository
+    private val repositoryTopic: TopicsRepository
 ) : TopicContract.Presenter {
 
     override fun getAllTopics() {
-        repository.getAllTopics(object : OnDataLoadedCallback<List<Topic>> {
+        repositoryTopic.getAllTopics(object : OnDataLoadedCallback<List<Topic>> {
             override fun onSuccess(data: List<Topic>) {
                 view.showTopics(data)
             }
