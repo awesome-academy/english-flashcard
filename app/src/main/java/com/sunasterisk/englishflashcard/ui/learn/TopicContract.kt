@@ -1,4 +1,4 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.learn
 
 import com.sunasterisk.englishflashcard.data.model.Topic
 import java.lang.Exception
@@ -6,7 +6,7 @@ import java.lang.Exception
 interface TopicContract {
 
     interface View {
-        fun showTopics(data: List<Topic>)
+        fun showTopics(topics: List<Topic>)
         fun showError(exception: Exception)
     }
 

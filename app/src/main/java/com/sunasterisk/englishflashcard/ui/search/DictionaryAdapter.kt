@@ -1,4 +1,4 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.search
 
 import android.view.LayoutInflater
 import android.view.View

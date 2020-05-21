@@ -21,7 +21,17 @@
     <string name="title_word">Hello</string>
     <string name="title_spelling">/asda/</string>
     <string name="title_translate">Xin Chào</string>
-    <string name="title_nodata">Không có dữ liệu</string>
+    <string name="title_nodata">No Data</string>
+    <string name="title_button_add_topic">Add Topic</string>
+    <string name="title_toolbar_list_topic">List Topics</string>
+    <string name="title_add_topic">Add topic</string>
+    <string name="title_name_topic">Name Topic</string>
+    <string name="title_link_image_topic">Link Image</string>
+    <string name="title_button_exit">Exit</string>
+    <string name="title_button_add">Add</string>
 
     <string name="hint_search">Search</string>
+
+    <string name="messeage_insert_success">Insert success</string>
+    <string name="messeage_insert_failed">Insert failed</string>
 </resources>
