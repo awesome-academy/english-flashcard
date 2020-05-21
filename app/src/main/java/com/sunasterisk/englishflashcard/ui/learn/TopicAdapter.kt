@@ -1,9 +1,10 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.learn
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sunasterisk.englishflashcard.R
 import com.sunasterisk.englishflashcard.data.model.Topic
 import kotlinx.android.synthetic.main.topic_item.view.*
@@ -32,6 +33,7 @@ class TopicAdapter : RecyclerView.Adapter<TopicAdapter.TopicViewHolder>() {
     class TopicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindData(topics: Topic) {
             itemView.textViewNameTopic.text = topics.name
+            Glide.with(itemView).load(topics.image).into(itemView.imageTopic)
         }
     }
 }

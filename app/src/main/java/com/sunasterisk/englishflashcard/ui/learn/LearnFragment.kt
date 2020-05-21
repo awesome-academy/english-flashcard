@@ -1,8 +1,7 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.learn
 
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import com.sunasterisk.englishflashcard.R
 import com.sunasterisk.englishflashcard.data.model.Dictionary
@@ -13,6 +12,9 @@ import com.sunasterisk.englishflashcard.data.source.local.DictionaryLocalDataSou
 import com.sunasterisk.englishflashcard.data.source.local.TopicsLocalDataSource
 import com.sunasterisk.englishflashcard.data.source.local.dao.DictionaryDAOlmpl
 import com.sunasterisk.englishflashcard.data.source.local.dao.TopicsDAOlmpl
+import com.sunasterisk.englishflashcard.ui.search.DictionaryAdapter
+import com.sunasterisk.englishflashcard.ui.search.DictionaryContract
+import com.sunasterisk.englishflashcard.ui.search.DictionaryPresenter
 import com.sunasterisk.englishflashcard.ui.BaseFragment
 import com.sunasterisk.englishflashcard.ui.toast
 import kotlinx.android.synthetic.main.fragment_learn.*
@@ -23,7 +25,8 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
     override val layoutResource get() = R.layout.fragment_learn
     private var topicAdapter = TopicAdapter()
     private var topicPresenter: TopicContract.Presenter? = null
-    private var dictionaryAdapter = DictionaryAdapter()
+    private var dictionaryAdapter =
+        DictionaryAdapter()
     private var dictionaryPresenter: DictionaryContract.Presenter? = null
 
     override fun initComponents() {
@@ -51,13 +54,17 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
             val localRepository: DictionaryRepository = DictionaryRepository.getInstance(
                 local = DictionaryLocalDataSource.getInstance(dictionaryDao)
             )
-            dictionaryPresenter = DictionaryPresenter(this, localRepository)
+            dictionaryPresenter =
+                DictionaryPresenter(
+                    this,
+                    localRepository
+                )
             dictionaryPresenter?.getDictionaries(nameEnglish)
         }
     }
 
-    override fun showTopics(data: List<Topic>) {
-        topicAdapter.updateData(data)
+    override fun showTopics(topics: List<Topic>) {
+        topicAdapter.updateData(topics)
     }
 
     private fun initRecyclerviewTopics() = with(recyclerViewTopics) {
@@ -88,13 +95,12 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
                     constraintLayoutTopics.visibility = View.VISIBLE
                 }
             }
-
         })
     }
 
-    override fun showDictionaries(data: List<Dictionary>) {
-        dictionaryAdapter.updateData(data)
-        if (data.size == 0) {
+    override fun showDictionaries(dictionaries: List<Dictionary>) {
+        dictionaryAdapter.updateData(dictionaries)
+        if (dictionaries.isEmpty()) {
             linerLayoutNodata.visibility = View.VISIBLE
             recyclerViewDictionary.visibility = View.INVISIBLE
         } else {

@@ -1,8 +1,6 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.learn
 
-import com.sunasterisk.englishflashcard.data.model.Dictionary
 import com.sunasterisk.englishflashcard.data.model.Topic
-import com.sunasterisk.englishflashcard.data.repository.DictionaryRepository
 import com.sunasterisk.englishflashcard.data.repository.TopicsRepository
 import com.sunasterisk.englishflashcard.data.source.OnDataLoadedCallback
 

@@ -1,4 +1,4 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.search
 
 import com.sunasterisk.englishflashcard.data.model.Dictionary
 import com.sunasterisk.englishflashcard.data.repository.DictionaryRepository

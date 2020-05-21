@@ -1,4 +1,4 @@
-package com.sunasterisk.englishflashcard.ui.learnandsearch
+package com.sunasterisk.englishflashcard.ui.search
 
 import com.sunasterisk.englishflashcard.data.model.Dictionary
 import java.lang.Exception
@@ -6,7 +6,7 @@ import java.lang.Exception
 interface DictionaryContract {
 
     interface View {
-        fun showDictionaries(data: List<Dictionary>)
+        fun showDictionaries(dictionaries: List<Dictionary>)
         fun showError(exception: Exception)
     }
 

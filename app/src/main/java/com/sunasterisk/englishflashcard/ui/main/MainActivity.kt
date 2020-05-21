@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.sunasterisk.englishflashcard.R
 import com.sunasterisk.englishflashcard.ui.exam.ExamFragment
 import com.sunasterisk.englishflashcard.ui.addenglish.AddEnglishFragment
-import com.sunasterisk.englishflashcard.ui.learnandsearch.LearnFragment
+import com.sunasterisk.englishflashcard.ui.learn.LearnFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {

@@ -12,9 +12,12 @@
     tools:ignore="UseCompoundDrawables">
 
     <ImageView
+        android:id="@+id/imageTopic"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_120"
+        android:contentDescription="@string/content_image_topic_item"
         android:padding="@dimen/dp_10"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_nature" />
 
     <TextView
