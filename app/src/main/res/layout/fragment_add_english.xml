@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorTurquoise"
-    tools:context="com.sunasterisk.englishflashcard.ui.addenglish.AddEnglishFragment">
+    tools:context="com.sunasterisk.englishflashcard.ui.addtopic.AddTopicFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

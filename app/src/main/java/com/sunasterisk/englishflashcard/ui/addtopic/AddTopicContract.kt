@@ -1,8 +1,8 @@
-package com.sunasterisk.englishflashcard.ui.addenglish
+package com.sunasterisk.englishflashcard.ui.addtopic
 
 import com.sunasterisk.englishflashcard.data.model.Topic
 
-interface AddEnglishContract {
+interface AddTopicContract {
 
     interface View {
         fun showTopics(topics: List<Topic>)

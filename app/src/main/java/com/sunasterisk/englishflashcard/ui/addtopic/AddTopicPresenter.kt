@@ -1,19 +1,19 @@
-package com.sunasterisk.englishflashcard.ui.addenglish
+package com.sunasterisk.englishflashcard.ui.addtopic
 
 import com.sunasterisk.englishflashcard.R
 import com.sunasterisk.englishflashcard.data.model.Topic
 import com.sunasterisk.englishflashcard.data.repository.TopicsRepository
 import com.sunasterisk.englishflashcard.data.source.OnDataLoadedCallback
 
-class AddEnglishPresenter(
-    private val view: AddEnglishContract.View,
+class AddTopicPresenter(
+    private val view: AddTopicContract.View,
     private val repositoryTopic: TopicsRepository
-) : AddEnglishContract.Presenter {
+) : AddTopicContract.Presenter {
 
     override fun addTopic(topic: Topic) {
         repositoryTopic.addTopic(topic, object : OnDataLoadedCallback<Boolean> {
             override fun onSuccess(data: Boolean) {
-                if (data == true) {
+                if (data) {
                     view.notifyMessage(R.string.messeage_insert_success)
                 } else {
                     view.notifyMessage(R.string.messeage_insert_failed)

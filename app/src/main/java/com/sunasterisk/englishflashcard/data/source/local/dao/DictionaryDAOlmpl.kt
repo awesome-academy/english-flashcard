@@ -58,7 +58,7 @@ class DictionaryDAOlmpl private constructor(context: Context) : DictionaryDAO {
             SQLiteTable.TABLE_DICTIONARY,
             null,
             SQLiteTable.COL_WORD + " LIKE ?",
-            arrayOf(nameEnglish + "%"),
+            arrayOf("$nameEnglish%"),
             null,
             null,
             null

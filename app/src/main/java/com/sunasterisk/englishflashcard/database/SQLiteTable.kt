@@ -8,7 +8,7 @@ object SQLiteTable {
     const val COL_IMG_TOPICS = "imgTopic"
 
     const val CREATE_TABLE_TOPICS = "CREATE TABLE $TABLE_TOPICS (" +
-            "$COL_ID_TOPICS IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_TOPICS INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_NAME_TOPICS TEXT, " +
             "$COL_IMG_TOPICS TEXT)"
 
@@ -20,7 +20,7 @@ object SQLiteTable {
     const val COL_SPELLING = "spelling"
 
     const val CREATE_TABLE_DICTIONARY = "CREATE TABLE $TABLE_DICTIONARY (" +
-            "$COL_ID_DICTIONARY IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_DICTIONARY INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_WORD TEXT, " +
             "$COL_WORD_TYPE TEXT, " +
             "$COL_SPELLING TEXT, " +
@@ -32,7 +32,7 @@ object SQLiteTable {
     const val COL_ID_WORD = "wordId"
 
     const val CREATE_TABLE_WORDENGLISH = "CREATE TABLE $TABLE_WORDENGLISH (" +
-            "$COL_ID_WORD IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_WORD INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_WORD TEXT)"
 
     const val TABLE_WORDVIETNAMESE = "WordVietnamese"
@@ -40,7 +40,7 @@ object SQLiteTable {
     const val COL_WORD_VIETNAMESE = "wordVietnamese"
 
     const val CREATE_TABLE_WORDVIETNAMESE = "CREATE TABLE $TABLE_WORDVIETNAMESE (" +
-            "$COL_ID_WORDVIETNAMESE IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_WORDVIETNAMESE INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_WORD_VIETNAMESE TEXT)"
 
     const val TABLE_EXAM = "Exam"
@@ -51,7 +51,7 @@ object SQLiteTable {
     const val COL_TOTAL_SCORE = "totalScore"
 
     const val CREATE_TABLE_EXAM = "CREATE TABLE $TABLE_EXAM (" +
-            "$COL_ID_EXAM IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_EXAM INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_DATE_EXAM TEXT, " +
             "$COL_CORRECT_SENTENCES INTEGER, " +
             "$COL_WRONG_SENTENCES INTEGER, " +
@@ -67,7 +67,7 @@ object SQLiteTable {
     const val COL_CHECK = "rightWrong"
 
     const val CREATE_TABLE_EXAMDETAILS = "CREATE TABLE $TABLE_EXAMDETAILS (" +
-            "$COL_ID_EXAMDETAILS IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_EXAMDETAILS INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_QUESTION TEXT, " +
             "$COL_ANSWER_A TEXT, " +
             "$COL_ANSWER_B TEXT, " +
