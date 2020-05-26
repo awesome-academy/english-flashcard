@@ -29,6 +29,17 @@
     <string name="title_link_image_topic">Link Image</string>
     <string name="title_button_exit">Exit</string>
     <string name="title_button_add">Add</string>
+    <string name="title_button_add_word">Add word</string>
+    <string name="title_checkbox_prepositions">Prepositions</string>
+    <string name="title_checkbox_adverbs">Adverbs</string>
+    <string name="title_checkbox_adjective">Adjective</string>
+    <string name="title_checkbox_verb">Verb</string>
+    <string name="title_checkbox_noun">Noun</string>
+    <string name="title_text_eng_type">Englisg Type</string>
+    <string name="title_text_translate">Translate</string>
+    <string name="title_text_spelling">Spelling</string>
+    <string name="title_text_english_word">English Word</string>
+    <string name="title_text_add_word">Add Word</string>
 
     <string name="hint_search">Search</string>
 

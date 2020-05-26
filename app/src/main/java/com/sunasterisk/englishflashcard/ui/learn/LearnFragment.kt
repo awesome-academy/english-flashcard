@@ -34,7 +34,6 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
         initRecyclerviewTopics()
         searchDictionary()
         initRecyclerviewDictionary()
-
     }
 
     private fun initData() {
@@ -54,11 +53,7 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
             val localRepository: DictionaryRepository = DictionaryRepository.getInstance(
                 local = DictionaryLocalDataSource.getInstance(dictionaryDao)
             )
-            dictionaryPresenter =
-                DictionaryPresenter(
-                    this,
-                    localRepository
-                )
+            dictionaryPresenter = DictionaryPresenter(this, localRepository)
             dictionaryPresenter?.getDictionaries(nameEnglish)
         }
     }
