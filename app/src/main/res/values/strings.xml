@@ -45,4 +45,5 @@
 
     <string name="messeage_insert_success">Insert success</string>
     <string name="messeage_insert_failed">Insert failed</string>
+
 </resources>

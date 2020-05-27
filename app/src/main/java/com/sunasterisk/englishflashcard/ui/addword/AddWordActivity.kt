@@ -38,7 +38,7 @@ class AddWordActivity : AppCompatActivity(), AddWordContract.View {
     }
 
     private fun insertWord() {
-        val idTopic = intent.getIntExtra(ID_TOPIC, -1)
+        val idTopic = intent.getIntExtra(EXTRA_ID, -1)
         presenter?.addWord(
             Dictionary(
                 0,
@@ -122,9 +122,9 @@ class AddWordActivity : AppCompatActivity(), AddWordContract.View {
     }
 
     companion object {
-        const val ID_TOPIC: String = "idTopic"
+        const val EXTRA_ID: String = "idTopic"
         fun getIntent(context: Context, position: Int) =
             Intent(context, AddWordActivity::class.java)
-                .putExtra(ID_TOPIC, position)
+                .putExtra(EXTRA_ID, position)
     }
 }
