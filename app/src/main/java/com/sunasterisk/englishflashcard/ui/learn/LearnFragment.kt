@@ -16,11 +16,13 @@ import com.sunasterisk.englishflashcard.ui.search.DictionaryAdapter
 import com.sunasterisk.englishflashcard.ui.search.DictionaryContract
 import com.sunasterisk.englishflashcard.ui.search.DictionaryPresenter
 import com.sunasterisk.englishflashcard.ui.BaseFragment
+import com.sunasterisk.englishflashcard.ui.flashcard.FlashcardActivity
 import com.sunasterisk.englishflashcard.ui.toast
 import kotlinx.android.synthetic.main.fragment_learn.*
 import java.lang.Exception
 
-class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.View {
+class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.View,
+    TopicAdapter.ClickListener {
 
     override val layoutResource get() = R.layout.fragment_learn
     private var topicAdapter = TopicAdapter()
@@ -59,7 +61,10 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
     }
 
     override fun showTopics(topics: List<Topic>) {
-        topicAdapter.updateData(topics)
+        topicAdapter.apply {
+            updateData(topics)
+            setOnClickListener(this@LearnFragment)
+        }
     }
 
     private fun initRecyclerviewTopics() = with(recyclerViewTopics) {
@@ -106,5 +111,9 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
 
     override fun showError(exception: Exception) {
         context?.toast(exception.message.toString())
+    }
+
+    override fun onItemClick(id: Int) {
+        context?.let { startActivity(FlashcardActivity.getIntent(it, id)) }
     }
 }
