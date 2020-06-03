@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.quiz.QuizActivity" />
         <activity android:name=".ui.addword.AddWordActivity" />
         <activity android:name=".ui.flashcard.FlashcardActivity" />
         <activity android:name=".ui.main.MainActivity" />
@@ -22,4 +23,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

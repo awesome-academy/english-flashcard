@@ -25,9 +25,9 @@
     <dimen name="sp_18">18sp</dimen>
     <dimen name="sp_21">21sp</dimen>
     <dimen name="sp_22">22sp</dimen>
+    <dimen name="sp_23">23sp</dimen>
     <dimen name="sp_25">25sp</dimen>
     <dimen name="sp_35">35sp</dimen>
     <dimen name="sp_40">40sp</dimen>
     <dimen name="sp_55">55sp</dimen>
-
 </resources>

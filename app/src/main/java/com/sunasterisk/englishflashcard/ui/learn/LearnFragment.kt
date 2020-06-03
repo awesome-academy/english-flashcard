@@ -12,6 +12,7 @@ import com.sunasterisk.englishflashcard.data.source.local.DictionaryLocalDataSou
 import com.sunasterisk.englishflashcard.data.source.local.TopicsLocalDataSource
 import com.sunasterisk.englishflashcard.data.source.local.dao.DictionaryDAOlmpl
 import com.sunasterisk.englishflashcard.data.source.local.dao.TopicsDAOlmpl
+import com.sunasterisk.englishflashcard.database.DefaultData
 import com.sunasterisk.englishflashcard.ui.search.DictionaryAdapter
 import com.sunasterisk.englishflashcard.ui.search.DictionaryContract
 import com.sunasterisk.englishflashcard.ui.search.DictionaryPresenter
@@ -61,6 +62,10 @@ class LearnFragment : BaseFragment(), TopicContract.View, DictionaryContract.Vie
     }
 
     override fun showTopics(topics: List<Topic>) {
+        if (topics.isEmpty()) {
+            DefaultData.dataTopicDefault(context)
+            topicPresenter?.getAllTopics()
+        }
         topicAdapter.apply {
             updateData(topics)
             setOnClickListener(this@LearnFragment)

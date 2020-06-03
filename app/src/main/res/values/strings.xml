@@ -14,7 +14,7 @@
     <string name="title_topics">Topics</string>
     <string name="title_flashcard_english">Flashcard English</string>
     <string name="title_learn_appbar">Learn</string>
-    <string name="title_exam_appbar">Exam</string>
+    <string name="title_exam_appbar">Quiz</string>
     <string name="title_list_topics">List Topics</string>
     <string name="title_school">School</string>
     <string name="title_toolbar">Flashcard English</string>
@@ -40,10 +40,15 @@
     <string name="title_text_spelling">Spelling</string>
     <string name="title_text_english_word">English Word</string>
     <string name="title_text_add_word">Add Word</string>
+    <string name="title_toolbar_quiz">Quiz</string>
 
     <string name="hint_search">Search</string>
 
     <string name="messeage_insert_success">Insert success</string>
     <string name="messeage_insert_failed">Insert failed</string>
-
+    <string name="messeage_english_word_not_be_empty">English Word Not Be Empty</string>
+    <string name="messeage_spelling_not_be_empty">Spelling Not Be Empty</string>
+    <string name="messeage_translate_not_be_empty">Translate Not Be Empty</string>
+    <string name="messeage_wordtype_not_be_empty">WordType Not Be Empty</string>
+    <string name="messeage_over_10">/10</string>
 </resources>

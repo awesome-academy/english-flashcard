@@ -29,7 +29,6 @@ class AddWordActivity : AppCompatActivity(), AddWordContract.View {
     private fun setClickEvents() {
         buttonAddWord.setOnClickListener {
             insertWord()
-            finish()
         }
         buttonExit.setOnClickListener {
             finish()
@@ -39,16 +38,33 @@ class AddWordActivity : AppCompatActivity(), AddWordContract.View {
 
     private fun insertWord() {
         val idTopic = intent.getIntExtra(EXTRA_ID, -1)
-        presenter?.addWord(
-            Dictionary(
-                0,
-                editTextEnglishWord.text.toString(),
-                wordType,
-                editTextSpelling.text.toString(),
-                editTextTranslate.text.toString(),
-                idTopic
-            )
-        )
+        when {
+            editTextEnglishWord.text.isEmpty() -> {
+                toast(getString(R.string.messeage_english_word_not_be_empty))
+            }
+            editTextSpelling.text.isEmpty() -> {
+                toast(getString(R.string.messeage_spelling_not_be_empty))
+            }
+            editTextTranslate.text.isEmpty() -> {
+                toast(getString(R.string.messeage_translate_not_be_empty))
+            }
+            wordType.isEmpty() -> {
+                toast(getString(R.string.messeage_wordtype_not_be_empty))
+            }
+            else -> {
+                presenter?.addWord(
+                    Dictionary(
+                        0,
+                        editTextEnglishWord.text.toString(),
+                        wordType,
+                        editTextSpelling.text.toString(),
+                        editTextTranslate.text.toString(),
+                        idTopic
+                    )
+                )
+                finish()
+            }
+        }
     }
 
     private fun checkRadio(radioButton: RadioButton) {
