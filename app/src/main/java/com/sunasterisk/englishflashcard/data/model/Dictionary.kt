@@ -5,12 +5,12 @@ import android.database.Cursor
 import com.sunasterisk.englishflashcard.database.SQLiteTable
 
 data class Dictionary(
-    val id: Int,
-    val word: String,
-    val wordType: String,
-    val spelling: String,
-    val translate: String,
-    val topicsId: Int
+    var id: Int = 0,
+    var word: String = "",
+    var wordType: String = "",
+    var spelling: String = "",
+    var translate: String = "",
+    var topicsId: Int = 0
 ) {
     constructor(cursor: Cursor) : this(
         id = cursor.getInt(cursor.getColumnIndex(SQLiteTable.COL_ID_DICTIONARY)),

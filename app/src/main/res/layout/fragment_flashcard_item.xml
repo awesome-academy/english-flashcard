@@ -1,15 +1,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context="com.sunasterisk.englishflashcard.ui.flashcard.FlashcardItemFragment">
+    android:background="@android:color/white">
 
     <com.wajahatkarim3.easyflipview.EasyFlipView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="?actionBarSize"
         app:autoFlipBack="false"
         app:flipDuration="400"
         app:flipEnabled="true"
@@ -17,13 +14,13 @@
         app:flipOnTouch="true"
         app:flipType="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline25"
+        app:layout_constraintStart_toStartOf="@+id/guideline24"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="@dimen/dp_350"
-            android:layout_height="@dimen/dp_350"
+            android:layout_height="@dimen/dp_400"
             android:layout_gravity="center"
             android:background="@drawable/boder_flashcard_back"
             android:gravity="center">
@@ -40,7 +37,7 @@
 
         <LinearLayout
             android:layout_width="@dimen/dp_350"
-            android:layout_height="@dimen/dp_350"
+            android:layout_height="@dimen/dp_400"
             android:layout_gravity="center"
             android:background="@drawable/boder_flashcard_pront"
             android:gravity="center"
@@ -72,4 +69,18 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 </androidx.constraintlayout.widget.ConstraintLayout>

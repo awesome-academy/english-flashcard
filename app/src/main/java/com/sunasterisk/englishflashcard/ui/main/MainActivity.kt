@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.sunasterisk.englishflashcard.R
-import com.sunasterisk.englishflashcard.ui.exam.ExamFragment
+import com.sunasterisk.englishflashcard.ui.topicquiz.TopicQuizFragment
 import com.sunasterisk.englishflashcard.ui.addtopic.AddTopicFragment
 import com.sunasterisk.englishflashcard.ui.learn.LearnFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.imageLearn -> replaceFragment(LearnFragment())
-            R.id.imageExam -> replaceFragment(ExamFragment())
+            R.id.imageExam -> replaceFragment(TopicQuizFragment())
             R.id.floatButtonAdd -> replaceFragment(AddTopicFragment())
         }
     }
